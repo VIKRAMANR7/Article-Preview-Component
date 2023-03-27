@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+:root {
+  --bg-lightgrayishblue: hsl(210, 46%, 95%);
+  --bg-grayishblue: hsl(212, 23%, 69%);
+  --bg-darkgray: hsl(214, 17%, 51%);
+  --bg--verydarkgray: hsl(217, 19%, 35%);
+  --bg-white: hsl(0, 0%, 100%);
+}
+*,
+*::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-lightgrayishblue);
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-weight: 500;
+}
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+.two-col {
+  display: flex;
+  max-width: 800px;
+  height: 330px;
+}
+.img-col {
+  max-width: 290px;
+}
+.img-col img {
+  max-width: 330px;
+  height: 330px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.text-col {
+  padding: 3rem;
+  max-width: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-white);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.text-col h1 {
+  font-size: 2.2rem;
+  line-height: 3rem;
+  color: var(--bg--verydarkgray);
+  font-weight: 700;
+}
+.main-para {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  color: var(--bg-darkgray);
+}
+.avatar-img {
+  padding-right: 1rem;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.person,
+.first-col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.person {
+  color: var(--bg--verydarkgray);
+  font-weight: 700;
+}
+.details {
+  padding-left: 1rem;
+}
+.date {
+  font-size: 1.4rem;
+  color: var(--bg-grayishblue);
+}
+.name {
+  font-size: 1.6rem;
+}
+.second-col {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bg-lightgrayishblue);
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+.second-col:hover {
+  background-color: var(--bg--verydarkgray);
+  color: var(--bg-white);
+}
+.second-col i {
+  line-height: 4rem;
+}
+
+.tooltip {
+  padding: 0 4rem;
+  width: 280px;
+  height: 50px;
+  position: relative;
+  left: -130px;
+  top: -110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg--verydarkgray);
+  border-radius: 1.6rem;
+  box-shadow: 0 1rem 2rem 0 var(--bg-lightgrayishblue);
+  visibility: hidden;
+}
+.share {
+  font-size: 1.6rem;
+  letter-spacing: 0.5rem;
+  color: var(--bg-grayishblue);
+  font-weight: normal;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icons img {
+  width: 2rem;
+  margin-left: 1.5rem;
+  position: relative;
+}
+.tooltip::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+  border-top: 1.5rem solid var(--bg--verydarkgray);
+  position: absolute;
+  top: 45px;
+  right: 120px;
+}
+.second-col:hover .tooltip {
+  visibility: visible;
+}
+@media screen and (max-width: 375px) {
+  .two-col {
+    flex-direction: column;
+    max-width: 345px;
+    height: auto;
+  }
+  .img-col img {
+    max-width: 345px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 0;
+  }
+  .text-col {
+    max-width: 345px;
+    padding: 3rem 3rem 0px 3rem;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  .text-col h1 {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    padding-bottom: 2rem;
+  }
+  .main-para {
+    font-size: 1.45rem;
+    line-height: 2.4rem;
+    padding-bottom: 2rem;
+  }
+  .second-col i {
+    line-height: 4rem;
+  }
+  .person {
+    padding-bottom: 2rem;
+  }
+  .date {
+    font-size: 1.2rem;
+  }
+  .tooltip {
+    width: 345px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    left: -275px;
+    top: -45px;
+    border-radius: 0;
+    visibility: hidden;
+  }
+  .share {
+    font-size: 1.8rem;
+  }
+  .tooltip::after {
+    display: none;
+  }
+  .second-col:hover .tooltip {
+    visibility: visible;
+  }
+}
